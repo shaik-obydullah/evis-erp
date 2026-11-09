@@ -4,7 +4,7 @@ A multi-module web-based ERP built as an M.Sc. project at the People's Universit
 
 ## About
 
-EVIS ERP integrates the core operations of a small business — planning, manufacturing, inventory, sales, staff, finance and customer communication — into one application on a single MySQL schema.
+EVIS ERP brings the core operations of a small business — planning, manufacturing, inventory, sales, staff, finance and customer communication — into one application on a single MySQL schema.
 
 - **Programme:** M.Sc. in Computer Science and Engineering
 - **Institution:** The People's University of Bangladesh, Department of CSE, Dhaka
@@ -12,7 +12,7 @@ EVIS ERP integrates the core operations of a small business — planning, manufa
 - **Co-author:** Ashif Md. Ibran Hossain
 - **Submitted:** 25 October 2019
 
-The project was submitted jointly. This repository is the copy I retained and continued to develop afterwards; the POS and e-commerce storefront modules were added in November and December 2019 and are not part of the submitted book.
+The project was submitted jointly. This is the copy I retained and continued to develop afterwards; the point-of-sale and e-commerce storefront modules were added in November and December 2019 and are not part of the submitted book.
 
 ## Modules
 
@@ -34,12 +34,22 @@ The submitted system covers fifteen modules:
 14. Payment manager
 15. Chat
 
-The source code also contains a point-of-sale terminal, an e-commerce storefront, a wishlist and a supplier portal, added after submission.
+## Repository layout
+
+```
+application/   controllers, models, views and config
+system/        CodeIgniter 2.2.6
+img/           product, employee, shop and supplier images
+public/        CSS, JavaScript and plugins
+index.php      front controller
+```
+
+The database schema is **not** included; the dump is retained offline.
 
 ## Stack
 
-- PHP on CodeIgniter
-- MySQL (31 tables in the retained database dump)
+- PHP 7.x on CodeIgniter 2.2.6
+- MySQL (31 tables)
 - HTML, CSS (Bootstrap), JavaScript (jQuery)
 - XAMPP for local development
 
@@ -49,15 +59,15 @@ Built with the waterfall model: requirements, design, implementation, testing, i
 
 ## Running it
 
-1. Import the schema from `MySQL Database/` into MySQL.
-2. Set the database name, user and password in `Source Code/application/config/database.php`.
-3. Serve `Source Code/` through XAMPP or any PHP 7.x + MySQL environment.
+1. Create a MySQL database and import a schema of your own; the original dump is not in this repository.
+2. Set the database name, user and password in `application/config/database.php`.
+3. Point Apache at the project root and open `index.php`.
 
-The database dump in this repository is from July 2020 — later than the submitted build — and is kept for the schema, not as a snapshot of what was handed in.
+CodeIgniter 2.2.6 is end-of-life and the code targets PHP 7.x. It will not run unmodified on current PHP.
 
 ## Limitations
 
-This is a student project, not a production system. There are no users, revenue or adoption claims. The code is preserved as it was written in 2019–2020, not refactored for current PHP versions.
+This is a student project, not a production system. There are no users, revenue or adoption claims. The code is preserved as it was written in 2019–2020, not refactored for current PHP versions, and the repository is not maintained.
 
 ## Third-party code
 
